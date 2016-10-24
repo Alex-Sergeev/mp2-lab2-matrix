@@ -69,6 +69,8 @@ TVector<ValType>::TVector(int s, int si)
 			pVector = new ValType[s];
 			Size = s;
 			StartIndex = si;
+			for (int i = 0; i < Size; i++)
+				pVector[i] = 0;
 		}
 		else
 			throw (si);
