@@ -96,7 +96,7 @@ TVector<ValType>::~TVector()
 template <class ValType> // доступ
 ValType& TVector<ValType>::operator[](int pos)
 {
-	if ((pos-StartIndex<MAX_VECTOR_SIZE)&&(pos - StartIndex>-1))
+	if ((pos-StartIndex<Size)&&(pos - StartIndex>-1))
 		return pVector[pos - StartIndex];
 	else
 		throw(pos);
