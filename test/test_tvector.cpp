@@ -200,9 +200,9 @@ TEST(TVector, can_add_vectors_with_equal_size)
 	v1[1] = 3;
 	v1[2] = 6;
 	TVector<int> v2(3);
-	v1[0] = 3;
-	v1[1] = 4;
-	v1[2] = 7;
+	v2[0] = 3;
+	v2[1] = 4;
+	v2[2] = 7;
 
 	EXPECT_EQ(v2,v+v1);
 }
@@ -225,9 +225,9 @@ TEST(TVector, can_subtract_vectors_with_equal_size)
 	v1[1] = 4;
 	v1[2] = 7;
 	TVector<int> v2(3);
-	v1[0] = 2;
-	v1[1] = 3;
-	v1[2] = 6;
+	v2[0] = 2;
+	v2[1] = 3;
+	v2[2] = 6;
 
 	EXPECT_EQ(v2,v1-v);
 }
