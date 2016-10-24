@@ -62,15 +62,13 @@ public:
 template <class ValType>
 TVector<ValType>::TVector(int s, int si)
 {
-	if ((s > 0) && (s < MAX_VECTOR_SIZE))
+	if ((s > 0) && (s < MAX_VECTOR_SIZE+1))
 	{
-		if (si > -1)
+		if ((si > -1) && (si<MAX_VECTOR_SIZE))
 		{
 			pVector = new ValType[s];
 			Size = s;
 			StartIndex = si;
-			for (int i = 0; i < Size; i++)
-				pVector[i] = 0;
 		}
 		else
 			throw (si);
@@ -109,11 +107,11 @@ bool TVector<ValType>::operator==(const TVector &v) const
 	{
 		for (int i = 0; i < Size; i++)
 			if ( pVector[i] != v.pVector[i])
-				return 0;
+				return false;
 	}
 	else
-		return 0;
-	return 1;
+		return false;
+	return true;
 } 
 
 
