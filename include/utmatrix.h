@@ -157,8 +157,14 @@ public:
 template <class ValType>
 TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 {
-	for (int i = 0; i < s; i++)
-		pVector[i] = TVector<ValType>(s - i, i);
+	if (s < MAX_MATRIX_SIZE + 1)
+	{
+		for (int i = 0; i < s; i++)
+			pVector[i] = TVector<ValType>(s - i, i);
+
+	}
+	else
+		throw (s);
 } 
 
 template <class ValType> // конструктор копирования
