@@ -305,8 +305,7 @@ TMatrix<ValType> TMatrix<ValType>::operator+(const TMatrix<ValType> &mt)
 {
 	if (Size == mt.Size)
 	{
-		TMatrix<int> tmp = *this;
-		tmp.pVector=new TVector<ValType>[Size];
+		TMatrix<ValType> tmp = *this;
 		for (int i = 0; i < Size; i++)
 			tmp.pVector[i] = pVector[i] + mt.pVector[i];
 		return tmp;
@@ -320,8 +319,7 @@ TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
 	if (Size == mt.Size)
 	{
-		TMatrix<int> tmp = *this;
-		tmp.pVector = new TVector<ValType>[Size];
+		TMatrix<ValType> tmp = *this;
 		for (int i = 0; i < Size; i++)
 			tmp.pVector[i] = pVector[i] - mt.pVector[i];
 		return tmp;
